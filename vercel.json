@@ -22,18 +22,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.noomicloneguide.com"
-        }
-      ],
-      "destination": "https://noomicloneguide.com/:path*",
-      "permanent": true
-    }
   ]
 }

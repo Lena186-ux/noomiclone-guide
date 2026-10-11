@@ -30,7 +30,7 @@
   }
   function enable(choice) {
     enabled = {ga: choice.ga, clarity: choice.clarity};
-    if (location.hostname !== 'noomicloneguide.com') return;
+    if (!['noomicloneguide.com', 'www.noomicloneguide.com'].includes(location.hostname)) return;
     if (enabled.ga && !gaLoaded) {
       gaLoaded = true;
       window.gtag('consent', 'update', {analytics_storage: 'granted'});
@@ -104,7 +104,7 @@
     if (event.key === key) location.reload();
   });
   function track(name, params = {}) {
-    if (location.hostname !== 'noomicloneguide.com') return;
+    if (!['noomicloneguide.com', 'www.noomicloneguide.com'].includes(location.hostname)) return;
     if (enabled.ga) window.gtag('event', name, {...params, page_location: cleanUrl(location.href)});
     if (enabled.clarity) window.clarity('event', name);
   }
