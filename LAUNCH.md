@@ -65,3 +65,14 @@ Parent keyword selection and Oct 4–10 historical Trends comparison were reused
 1. Normal local canonical HTTPS after DNS caches expire.
 2. GSC sitemap successful fetch, Bing sitemap completed processing, and homepage indexing request retry.
 3. GA4/Clarity real consented canonical-browser receipt, independent consent/withdrawal browser QA, and mobile consent layout.
+
+
+## Access mitigation compared with Lagos — 2026-10-11 20:00 Asia/Shanghai
+
+Read the chat “Lagos Life Helper 首版建站与部署”. Its verified www recovery came from removing forced apex redirects while www DNS had already refreshed. Noomi differed: both apex and www still resolved to registrar parking IPs on the current network.
+
+Removed the www domain redirect through the Vercel project API and removed the matching vercel.json host redirect. Both custom hosts now allow consent-based analytics; preview hosts remain excluded. Commit 387e5ef pushed to main and deployed to production dpl_F2jzSByNUB13Wnf4GmPVufZZYqKH, READY. Canonicals, sitemap and search properties remain on the apex origin.
+
+Authoritative DNS and Cloudflare HTTPS DNS queries return Vercel addresses for apex and the correct CNAME for www. Pinned www HTTPS with full certificate verification returns HTTP 200 without an apex redirect. Cloudflare cache purge requests were submitted for both hosts; this does not prove that the current network resolver cache refreshed.
+
+Ordinary www browser navigation still failed with ERR_SSL_PROTOCOL_ERROR. Ordinary resolver queries still returned parking IPs (remaining TTL about 18 minutes at 19:56). Do not claim custom-domain browser access is fixed. The public Vercel alias was successfully opened in the browser, and the Controls link and return to homepage worked. Local evidence: ../noomiclone-guide-evidence/access-fallback.jpg. GA4/Clarity receipt and custom-domain browser checks remain pending. No additional gefei calls or credits (0).
