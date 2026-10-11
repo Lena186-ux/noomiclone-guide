@@ -11,7 +11,7 @@
 - Build: `node build.mjs`; 11 static content routes, custom 404, sitemap, robots, original SVG artwork and PNG social preview. No test suite added or run.
 - All 11 production routes returned HTTP 200; sitemap returned 200/application/xml; robots returned 200/text/plain; unknown route returned 404.
 - Browser QA: desktop and 390/768 px layouts reviewed; no horizontal overflow at those widths. Production FAQ expansion confirmed. Official destinations and per-route canonicals inspected.
-- No third-party game assets, executable/source distribution, analytics scripts or advertising tags.
+- No third-party game assets, executable/source distribution, advertising tags. GA4 and Clarity are optional after visitor consent (see configuration below).
 
 ## Deployment workflow
 
@@ -41,12 +41,27 @@ Primary sources are documented in README.md and linked in website content. Autho
 
 Parent keyword selection and Oct 4–10 historical Trends comparison were reused; no live search-volume, KD, traffic or ranking claims appear on the site. Gefei `load_guide` / newwords: **2 credits** charged, request `req_e3c48b15c2aa42e0`. Shared 20-minute spend was reported as 33 credits, so further queries stopped. No additional Gefei queries made.
 
-## Remaining follow-ups
+## Search and analytics configuration — October 11, 2026
 
-1. Ordinary local/browser DNS cache convergence remains pending; authoritative/public DNS, certificates, origin HTTPS and www redirects are verified.
-2. Verify GSC and Bing properties and submit sitemap. Neither was configured in this chat.
-3. If desired, connect GA4/Clarity with privacy and consent behavior before loading vendor tags.
-4. Grow source-linked long-tail guides using confirmed questions and version changes. Obtain creator permission and hands-on evidence before adding screenshots or advanced gameplay claims.
-5. Pursue an advertising application once the site's content and audience support it. No ad approval, revenue, tracking ID or guaranteed traffic is claimed.
+- GSC domain `sc-domain:noomicloneguide.com` and URL prefix `https://noomicloneguide.com/` verified by DNS. TXT @ `google-site-verification=TH0bUuBpuan6NySiJLsP3Ovqg1GJt84e4vLvoaAtA2c`, TTL 3600; existing DNS retained.
+- Sitemap `https://noomicloneguide.com/sitemap.xml` submitted; initial report says Unable to fetch, 0 discovered. Re-submitted after homepage live test passed. Submission is not confirmation of indexing.
+- GSC live homepage test at 19:37 Asia/Shanghai: URL can be indexed. Homepage indexing request returned a temporary submission error; not claimed successful.
+- Bing HTTPS site added and HTML meta verification deployed. Sitemap submitted and initially Processing; 0 discovered. Later Bing UI network requests returned ERR_FAILED; final processing result not verified.
+- GA4 under existing SwitchSpines account 403173714: NoomiClone Guide property 558437910, web stream 16105947576, measurement ID G-6FYLHG2HR4. Timezone China (GMT+8), currency USD. Enhanced measurement: page views, scroll, outbound click, file downloads enabled; search/forms/video disabled. Google signals and user-provided data remain off. Advertising personalization disabled for all 307 regions.
+- GSC domain resource linked successfully to GA4 NoomiClone Guide Web in the same account.
+- `official_play_click` registered as a code-created key event, once per session, no default monetary value. `official_store_click` and `guide_navigation` are emitted by consent-aware code; neither means a game was played or installed.
+- Clarity project yw130kv1um (NoomiClone Guide), URL https://noomicloneguide.com/, entertainment category. Strict text masking confirmed. Consent v2 grants analytics storage only, denies advertising storage.
+- Global analytics.js and privacy dialog deployed once per document. Neither vendor script loads before consent. Visitors can select either service, reject both, or withdraw through footer Privacy settings. Choices retained for 180 days; withdrawal clears first-party analytics cookies and reloads to stop previously loaded services. Tracking limited to canonical hostname, avoiding preview traffic.
+- Updated privacy policy, Google/Bing verification meta tags, and CSP vendor allowlists deployed.
+- Deployment dpl_5rgaUAsRtoC5B581CAJidceXW3fz READY, aliased to noomicloneguide.com. Production source verified with full TLS validation through Vercel address, including both search verification tags and analytics.js.
+- All 11 routes, sitemap.xml, robots.txt and analytics.js returned HTTPS 200 through verified Vercel origin.
+- Build, JS syntax and diff whitespace checks passed. Browser verified desktop privacy dialog, rejection and reopening on production Vercel alias, with no vendor scripts on preview hostname. New viewport override did not alter observed DOM dimensions, so new mobile consent QA remains unverified.
+- Latest normal local HTTPS/browser still fails TLS because local resolver returns old NameSilo parking addresses. Authoritative and Cloudflare DNS return Vercel addresses; Google public resolver still had parking addresses. HTTPS certificate validated without bypass at both Vercel IPs and www redirected 308 to apex preserving path. Google live test independently accessed the canonical homepage.
+- GA4 realtime receipt and Clarity live recording not yet verified: local canonical browser access is blocked by DNS cache. Do not count source presence or preview visits as received analytics.
+- Account screenshots saved outside the public repository in ../noomiclone-guide-evidence/.
 
-Domain follow-up used no additional Gefei queries: 0 credits.
+## Remaining verification
+
+1. Normal local canonical HTTPS after DNS caches expire.
+2. GSC sitemap successful fetch, Bing sitemap completed processing, and homepage indexing request retry.
+3. GA4/Clarity real consented canonical-browser receipt, independent consent/withdrawal browser QA, and mobile consent layout.

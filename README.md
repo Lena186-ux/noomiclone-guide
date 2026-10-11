@@ -1,6 +1,6 @@
 # NoomiClone Guide
 
-Independent English guide to NoomiClone. Original illustrations; no game files, third-party game assets, advertising or analytics.
+Independent English guide to NoomiClone. Original illustrations; no game files, third-party game assets, advertising. Optional GA4 and Clarity load only after the visitor chooses consent.
 
 ## Build
 
