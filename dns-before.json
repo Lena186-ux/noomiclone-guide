@@ -1,0 +1,49 @@
+{
+  "domain": "noomicloneguide.com",
+  "observed": "2026-10-11",
+  "records": [
+    {
+      "name": "@",
+      "type": "A",
+      "value": "172.232.24.235",
+      "ttl": 3603
+    },
+    {
+      "name": "@",
+      "type": "A",
+      "value": "172.232.24.161",
+      "ttl": 3603
+    },
+    {
+      "name": "@",
+      "type": "A",
+      "value": "172.234.25.42",
+      "ttl": 3603
+    },
+    {
+      "name": "www",
+      "type": "A",
+      "value": "172.232.24.235",
+      "ttl": 3603
+    },
+    {
+      "name": "www",
+      "type": "A",
+      "value": "172.232.24.161",
+      "ttl": 3603
+    },
+    {
+      "name": "www",
+      "type": "A",
+      "value": "172.234.25.42",
+      "ttl": 3603
+    },
+    {
+      "name": "_domainconnect",
+      "type": "TXT",
+      "value": "www.namesilo.com/domainconnect",
+      "ttl": 3600
+    }
+  ],
+  "mailRecordsPresent": false
+}

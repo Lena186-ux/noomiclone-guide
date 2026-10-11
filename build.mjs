@@ -1,5 +1,5 @@
 import {mkdir,writeFile,copyFile,rm} from 'node:fs/promises';
-const site=process.env.SITE_URL||'https://noomiclone-guide.vercel.app';
+const site=process.env.SITE_URL||'https://noomicloneguide.com';
 const itch='https://jamesnorth.itch.io/noomiclone', android='https://play.google.com/store/apps/details?id=com.JamesWest.NoomiClone', ios='https://apps.apple.com/us/app/noomiclone/id1546690510';
 const repo='https://github.com/Lena186-ux/noomiclone-guide';
 const ext=(url,label)=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`;

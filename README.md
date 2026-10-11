@@ -4,7 +4,7 @@ Independent English guide to NoomiClone. Original illustrations; no game files, 
 
 ## Build
 
-`node build.mjs` builds eleven static content pages plus 404, sitemap and robots into `dist/`. No dependencies required. Current canonical origin is https://noomiclone-guide.vercel.app. To switch after domain verification, use `SITE_URL=https://noomicloneguide.com node build.mjs` and set the same build environment variable in Vercel.
+`node build.mjs` builds eleven static content pages plus 404, sitemap and robots into `dist/`. No dependencies required. Current canonical origin is https://noomicloneguide.com. To switch after domain verification, use `SITE_URL=https://noomicloneguide.com node build.mjs` and set the same build environment variable in Vercel.
 
 ## Sources and limits
 
@@ -17,4 +17,4 @@ The author offers an itch.io project-card widget. Permission for a third-party p
 
 ## Isolation
 
-Use only this repository and its Vercel project. Never stage the parent workspace or reuse a sibling's `.vercel/project.json`. Contact corrections go to the public GitHub issue tracker. No domain purchase is claimed.
+Use only this repository and its Vercel project. Never stage the parent workspace or reuse a sibling's `.vercel/project.json`. Contact corrections go to the public GitHub issue tracker. Domain purchase was confirmed on 2026-10-11.
