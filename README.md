@@ -4,7 +4,7 @@ Independent English guide to NoomiClone. Original illustrations; no game files, 
 
 ## Build
 
-`node build.mjs` builds eleven static content pages plus 404, sitemap and robots into `dist/`. No dependencies required. Current canonical origin is https://noomicloneguide.com. To switch after domain verification, use `SITE_URL=https://noomicloneguide.com node build.mjs` and set the same build environment variable in Vercel.
+`node build.mjs` builds eleven static content pages plus 404, sitemap and robots into `dist/`. No dependencies required. Current canonical origin is https://noomicloneguide.com. The default origin is the purchased custom domain. If using an explicit SITE_URL build variable, keep it at https://noomicloneguide.com.
 
 ## Sources and limits
 
